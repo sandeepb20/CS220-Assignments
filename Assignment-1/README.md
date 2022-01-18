@@ -29,12 +29,12 @@ test cases. Put five-time unit delay between consecutive inputs.
 
 ### Instruction:
 Submit your code and other files inside in a zip file named clearly as
-described below. \\
-G<Group No.>R_<Roll no.> A<Assignment No.>.zip \\
-Example. G1R_200410_200411_200412.zip \\
+described below. <br>
+G<Group No.>R_<Roll no.> A<Assignment No.>.zip <br>
+Example. G1R_200410_200411_200412.zip <br>
 
 Any information/assumption about implementation should be described
-clearly in a separate text file.\\
-Submit your iverilog/verilog files named clearly as described below.\\
-A<Assignment No.>Q<Question No.>_<top module name>.v \\
+clearly in a separate text file. <br>
+Submit your iverilog/verilog files named clearly as described below. <br>
+A<Assignment No.>Q<Question No.>_<top module name>.v   <br>
 Example. A1Q1_one_bit_full_adder.v
