@@ -30,12 +30,13 @@ module test_bench();
         #5; A = 65; B = 140 ;
         #5; A = 80; B = 150 ;
         #5; A = 100; B =  155;
+        #5; A = 100; B = 200;
         #5;
         $finish;
 
     end
     initial begin
-        $monitor("%d + %d = %d",A,B,S);
+        $monitor("1st Input = %d , 2nd input = %d, Sum of inputs = %d, Carry = %d",A,B,S,Cout);
     end
 
 endmodule
