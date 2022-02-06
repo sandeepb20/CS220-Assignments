@@ -1,4 +1,3 @@
-
 `include "1-bit_fullAdder.v"
 module Ripple_Add (S,Cout,A,B);
     input wire[7:0] A,B;
