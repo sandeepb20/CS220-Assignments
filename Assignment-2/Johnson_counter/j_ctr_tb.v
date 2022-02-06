@@ -6,7 +6,7 @@ module j_ctr_tb;
 reg clk=0,clr=0;
 wire [7:0] q;
 
-j_ctr uut(clk,clr,q);
+j_ctr uut(q, clr, clk);
 
 always begin
     clk=~clk;
@@ -17,9 +17,11 @@ initial begin
     $dumpfile("j_ctr_tb.vcd");
     $dumpvars(0,j_ctr_tb);
     $monitor("T=%0t q=%b", $time, q);  
-    repeat (2) @(posedge clk);  
-    clr <= 0;  
-    repeat (15) @(posedge clk);
+    clk = 0;
+    clr = 0;
+    #20 clr = 1;
+    #12 clr = 0;
+    #10
     $finish;  
 end  
 
