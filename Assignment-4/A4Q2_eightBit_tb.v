@@ -10,28 +10,6 @@ wire cout, flag;
 
 eightbit ok(A,B,opcode,res,cout,flag);
 
-/* always @(A or B or opcode) begin
-    if(opcode == 1'b0) $display("Addition of two inputs is =");
-    else $display("Substraction of two inputs is =");
-    if(flag == 1'b1) begin
-        $display("Overflow Occured while evaluating");
-    end
-    else if(res[7] == 1'b1) $display("-%d",{1'b0, (~res[6:0] + 1'b1)});
-    else $display("%d",res);
-    $display("\n");
-    if(A[7] == 1'b1) begin
-        //A = {A[7], (~A[6:0] + 1'b1)};
-        $display("1st input = -%d", {1'b0, (~A[6:0] + 1'b1)});
-
-    end 
-    else $display("1st input = %d", A);
-
-    if(B[7] == 1'b1) begin
-        //A = {A[7], (~A[6:0] + 1'b1)};
-        $display("2nd input = -%d", {1'b0, (~B[6:0] + 1'b1)});
-    end 
-    else $display("2nd input = %d", B); 
-end */
 always #5 begin
     if(flag == 1'b1) begin
         if(res[7] == 1'b1) begin
@@ -126,6 +104,7 @@ always #5 begin
         end
 
     end
+    $display("\n");
 end
 initial begin
     $dumpfile("A4Q2_eightBit_tb.vcd");
@@ -153,6 +132,8 @@ initial begin
     A = 5; B = 10; opcode = 1; #5;
     $finish;
 end
-
+initial begin
+    $monitor("1st input = %b , 2nd input = %b , opcode = %b, resultant = %b, Overflow occured ? = %b",A,B,opcode,res,flag);
+end
 
 endmodule
