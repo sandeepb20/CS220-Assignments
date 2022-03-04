@@ -17,7 +17,7 @@ end
 initial begin
     $dumpfile("graycode_tb.vcd");
     $dumpvars(0,testbench);
-    $monitor("%d count = %b", $time,count);
+    $monitor("%0d count = %b", $time,count);
 end
 
 endmodule
