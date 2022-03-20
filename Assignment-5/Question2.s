@@ -1,10 +1,20 @@
     .data
 arr: .space 40
 space: .asciiz " "
+prompt: .asciiz "Enter 10 values:"
+newline: .asciiz "\n"
 
     .text
 	.globl main
 main:
+# prompt
+    li $v0, 4
+    la $a0, prompt
+    syscall
+# new line
+    li $v0, 4
+    la $a0, newline
+    syscall
     addi $t0, $zero, 0
 # taking input
 takein:
@@ -14,8 +24,7 @@ takein:
     li $v0, 5
 	syscall
     # add value to array
-    addi $t1, $v0, 0
-    sw $t1, arr($t0)
+    sw $v0, arr($t0)
     # update
     addi $t0, $t0, 4
     j takein
@@ -54,7 +63,6 @@ iSort:
 # printing the array
 print:
     addi $t1, $zero, 0
-    j while
     while:
         beq $t1, 40, oute
         # printing the elements
