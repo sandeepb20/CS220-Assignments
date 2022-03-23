@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "gcd.v"
+`include "A5Q1_gcd.v"
 
 module gcd_tb;
 
@@ -12,7 +12,7 @@ gcd uut(A_in,B_in,hcf);
 
 //ensure that B_in!=0_in and A_in!=0
 initial begin
-    $dumpfile("gcd_tb.vcd");
+    $dumpfile("A5Q1_gcd_tb.vcd");
     $dumpvars(0,gcd_tb);
 
   
