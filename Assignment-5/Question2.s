@@ -3,7 +3,7 @@ arr: .space 40
 space: .asciiz " "
 prompt: .asciiz "Enter 10 values:"
 newline: .asciiz "\n"
-
+soln: .asciiz "The sorted elements are :- \n"
     .text
 	.globl main
 main:
@@ -63,6 +63,9 @@ iSort:
 # printing the array
 print:
     addi $t1, $zero, 0
+    li $v0, 4
+    la $a0, soln
+    syscall
     while:
         beq $t1, 40, oute
         # printing the elements
