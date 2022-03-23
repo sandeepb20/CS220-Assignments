@@ -2,7 +2,7 @@
     num1: .float 0.0
     num2: .float 1.0
     prompt: .asciiz "Enter the value of p: "
-    nums: .asciiz "Enter the value of number(s): "
+    nums: .asciiz "Enter the value of number: "
 .text
 .globl main
 main:
