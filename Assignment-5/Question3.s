@@ -1,6 +1,9 @@
      .data
 # for adding space between numbers     
 space: .asciiz " "
+prompt: .asciiz "Fibonacci numbers less than 500 :- \n"
+# please update the first and second term in line 16 and 17
+# to get a different fibonacci series
 
 
 # instructions
@@ -13,7 +16,10 @@ main:
      li $s1, 1
      li $s2, 1
 
-# printing the first element     
+# printing the first element
+     li $v0, 4
+     la $a0, prompt
+     syscall  
      li $v0, 1
      addi $a0, $s1, 0
      syscall
